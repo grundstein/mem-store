@@ -6,17 +6,18 @@ const libName = '@grundstein/mem-store'
 export const memStore = (data = {}) => ({
   set: (key, val) => {
     if (is.empty(key)) {
-      throw error(`${libName}.set: empty key`, 'E_KEY_EMPTY')
+      throw error(`${libName}.set: key must be non-empty`, 'KEY_EMPTY')
     }
 
-    if (!is.string(key)) {
-      throw error(`${libName}.set: key must be a string, got ${typeof key}`, 'E_KEY_TYPE')
+    if (!is.string(key) && !is.number(key)) {
+      throw error(`${libName}.set: key must be a string or a number, got ${typeof key}`, 'KEY_TYPE')
     }
 
     data[key] = val
   },
 
-  // only return full cache if no key was passed to function, not if key was empty.
+  // only return full cache if no key was passed to function, not if key is empty, null, undefined.
+  // this SHOULD prevent get from erroring at runtime.
   get: (key = false) => (key !== false ? data[key] : data),
 
   reset: key => {
