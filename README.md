@@ -1,5 +1,7 @@
 ## @grundstein/mem-store
 
+### WIP. NOT IN PRODUCTION YET!
+
 minimal, memory only, key -> value store for nodejs.
 
 #### installation
