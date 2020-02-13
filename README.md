@@ -22,6 +22,11 @@ store.get('initial') // 'data'
 store.set('key', 'value')
 
 store.get('key') // 'value'
-```
 
-this library does NOT check for input errors
+store.set('', '') // error, error.code === 'E_KEY_EMPTY'
+
+store.set('key', '') // no error. value of store.key is ''.
+
+store.set(undefined, [23]) // error. error.code === 'E_KEY_TYPE'
+
+```
