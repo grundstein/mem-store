@@ -1,0 +1,48 @@
+{
+  "name": "@grundstein/mem-store",
+  "version": "0.0.1-alpha.0",
+  "author": "Wizards & Witches",
+  "homepage": "https://grundstein.github.io/mem-store",
+  "license": "AGPL-3.0",
+  "description": "NOT YET BENCHMARKED OR IN PRODUCTION! @grundstein/mem-store. minimal non-persistant in-process key -> value store for nodejs.",
+  "main": "src/index.mjs",
+  "engines": {
+    "node": ">=13.5.0"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "start": "t",
+    "test": "t",
+    "format": "f -w"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grundstein/mem-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/grundstein/mem-store/issues"
+  },
+  "dependencies": {
+    "@magic/error": "0.0.5",
+    "@magic/types": "0.1.11"
+  },
+  "devDependencies": {
+    "@magic/format": "0.0.7",
+    "@magic/test": "0.1.33"
+  },
+  "keywords": [
+    "grundstein",
+    "static",
+    "page",
+    "server"
+  ],
+  "contributors": [
+    {
+      "name": "jascha ehrenreich",
+      "github": "jaeh"
+    }
+  ]
+}
