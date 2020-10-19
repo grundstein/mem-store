@@ -26,12 +26,12 @@
     "url": "https://github.com/grundstein/mem-store/issues"
   },
   "dependencies": {
-    "@magic/error": "0.0.6",
+    "@magic/error": "0.0.7",
     "@magic/types": "0.1.13"
   },
   "devDependencies": {
-    "@magic/format": "0.0.13",
-    "@magic/test": "0.1.52"
+    "@magic/format": "0.0.17",
+    "@magic/test": "0.1.56"
   },
   "keywords": [
     "grundstein",
