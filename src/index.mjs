@@ -24,16 +24,21 @@ export const memStore = (data = {}, throwError = false) => ({
     data[key] = val
   },
 
-  // only return full cache if no key was passed to function, not if key is empty, null, undefined.
-  // this SHOULD prevent get from erroring at runtime.
-  get: (key = false) => {
-    if (data.hasOwnProperty(key)) {
-      return data[key]
-    }
-
-    if (key === false) {
+  get: (key = 'unset') => {
+    if (key === 'unset') {
       return data
     }
+
+    const isValidKey = is.string(key) || is.number(key)
+    if (is.empty(key) || !isValidKey) {
+      const err = error(`${libName}.get: key must be a string or a number, got ${typeof key}`, 'KEY_TYPE')
+      if (throwError) {
+        throw err
+      }
+      return err
+    }
+
+    return data[key]
   },
 
   reset: () => {
