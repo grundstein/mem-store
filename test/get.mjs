@@ -1,4 +1,4 @@
-import { is } from '@magic/test'
+import { is, tryCatch } from '@magic/test'
 
 import memStore from '../src/index.mjs'
 
@@ -6,25 +6,32 @@ const data = { key: 'is set' }
 
 const store = memStore(data)
 
+const erroringStore = memStore({}, true)
+
 export default [
-  { fn: () => store.get('key'), expect: 'is set', info: 'expect data to be gettable' },
+  { fn: () => store.get('key'), expect: 'is set', info: 'expect data.key to be gettable' },
   {
-    fn: () => store.get({ data: 'value' }),
-    expect: undefined,
-    info: 'no error if key is weird',
+    fn: () => store.get({ key: 'value' }),
+    expect: is.error,
+    info: 'return error if key is weird',
   },
   {
     fn: () => store.get(new Date()),
-    expect: undefined,
-    info: 'no error if key is Date',
+    expect: is.error,
+    info: 'return error if key is Date',
   },
   {
     fn: () => store.get(new Error()),
-    expect: undefined,
-    info: 'no error if key is Error',
+    expect: is.error,
+    info: 'return error if key is Error',
   },
   {
-    fn: () => store.get(false),
+    fn: tryCatch(erroringStore.get, new Error()),
+    expect: t => t.code === 'E_KEY_TYPE',
+    info: 'throw error if second argument to memStore init was true',
+  },
+  {
+    fn: () => store.get(),
     expect: is.deep.equal(data),
   },
 ]
