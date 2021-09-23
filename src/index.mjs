@@ -22,6 +22,7 @@ export const memStore = (data = {}, throwError = false) => ({
     }
 
     data[key] = val
+    return true
   },
 
   get: (key = 'unset') => {
