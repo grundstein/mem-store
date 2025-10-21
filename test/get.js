@@ -1,6 +1,6 @@
 import { is, tryCatch } from '@magic/test'
 
-import memStore from '../src/index.mjs'
+import memStore from '../src/index.js'
 
 const data = { key: 'is set' }
 

@@ -1,6 +1,6 @@
 import { is } from '@magic/test'
 
-import memStore from '../src/index.mjs'
+import memStore from '../src/index.js'
 
 const store = memStore({ toReset: 'value' })
 
