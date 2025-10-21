@@ -33,3 +33,13 @@ store.set('key', '') // no error. value of store.key is ''.
 
 store.set(undefined, [23]) // error. error.code === 'E_KEY_TYPE'
 ```
+
+#### changelog
+
+##### v0.0.2 - unreleased
+
+...
+
+##### v0.0.1
+
+first release
