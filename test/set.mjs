@@ -7,7 +7,11 @@ const store = memStore({})
 const erroringStore = memStore({}, true)
 
 export default [
-  { fn: () => store.set('setData', true), expect: t => t === true && t === store.get('setData'), info: 'data is settable' },
+  {
+    fn: () => store.set('setData', true),
+    expect: t => t === true && t === store.get('setData'),
+    info: 'data is settable',
+  },
   {
     fn: () => store.set(235, true),
     expect: t => t === true && t === store.get('235'),
