@@ -6,6 +6,7 @@
   "license": "AGPL-3.0",
   "description": "NOT YET BENCHMARKED OR IN PRODUCTION! @grundstein/mem-store. minimal non-persistant in-process key -> value store for nodejs.",
   "main": "src/index.mjs",
+  "types": "types/index.d.ts",
   "engines": {
     "node": ">=14.14.0"
   },
@@ -13,10 +14,12 @@
   "scripts": {
     "start": "t",
     "test": "t",
-    "format": "f -w"
+    "format": "f -w",
+    "build": "tsc && npm run format"
   },
   "files": [
-    "src"
+    "src",
+    "types"
   ],
   "repository": {
     "type": "git",
@@ -31,7 +34,8 @@
   },
   "devDependencies": {
     "@magic/format": "0.0.68",
-    "@magic/test": "0.2.24"
+    "@magic/test": "0.2.24",
+    "typescript": "5.9.3"
   },
   "keywords": [
     "grundstein",
