@@ -1,6 +1,6 @@
 {
   "name": "@grundstein/mem-store",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1",
   "author": "Wizards & Witches",
   "homepage": "https://grundstein.github.io/mem-store",
   "license": "AGPL-3.0",
